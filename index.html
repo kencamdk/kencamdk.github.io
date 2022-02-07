@@ -12,54 +12,36 @@
 
     <meta property="og:title" content="Invitation">
     <meta property="og:type" content="website">
-    <!-- <meta property="og:url" content="https://www.sitepoint.com/a-basic-html5-template/">
-  <meta property="og:description" content="A simple HTML5 Template for new projects."> -->
-    <!-- <meta property="og:image" content="image.png"> -->
+  <meta property="og:description" content="Kære venner og familie... Vi skal giftes!"> -->
+    <meta property="og:image" content="Invitation.png">
 
-    <!-- <link rel="icon" href="/favicon.ico">
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
     <style>
         html,
         body {
             margin: 0;
             height: 100%;
         }
+
+        img {
+            width: 100%;
+            max-width: 1550px;
+            display: block;
+            margin: auto;
+        }
     </style>
-
-    <script src="https://unpkg.com/@panzoom/panzoom@4.4.4/dist/panzoom.min.js"></script>
-
+    
 </head>
 
 <body>
 
-    <object id="panzoom-element" data="https://kencamdk.github.io/Invitation.pdf" type="application/pdf" width="100%"
-        style="min-height:calc(100vh)">
-        <p style="margin: 16px;"><a href="https://kencamdk.github.io/Invitation.pdf">Klik her for at downloade
-                invitationen 😎</a></p>
-    </object>
-
-    <!-- <object data="file:///home/crc/src/other/binv/kencamdk.github.io/Invitation.pdf" type="application/pdf" width="100%" style="height:calc(100vh)">
-        <p style="margin: 16px;"><a href="file:///home/crc/src/other/binv/kencamdk.github.io/Invitation.pdf">Klik her for at downloade invitationen 😎</a></p>
-    </object> -->
-
-    <script>
-        const elem = document.getElementById('panzoom-element')
-        const panzoom = Panzoom(elem, {
-            maxScale: 5,
-            disablePan: true,
-        })
-        // panzoom.pan(10, 10)
-        // panzoom.zoom(2, { animate: true })
-
-        // Panning and pinch zooming are bound automatically (unless disablePan is true).
-        // There are several available methods for zooming
-        // that can be bound on button clicks or mousewheel.
-        // button.addEventListener('click', panzoom.zoomIn)
-        // elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
-    </script>
+    <img src="Invitation.png">
 
 </body>
 
