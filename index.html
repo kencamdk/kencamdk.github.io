@@ -22,23 +22,43 @@
 
   <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
     <style>
-        html, body {
+        html,
+        body {
             margin: 0;
             height: 100%;
         }
     </style>
 
+    <script src="https://unpkg.com/@panzoom/panzoom@4.4.4/dist/panzoom.min.js"></script>
+
 </head>
 
 <body>
 
-    <object data="https://kencamdk.github.io/Invitation.pdf" type="application/pdf" width="100%" style="min-height:calc(100vh)">
-        <p style="margin: 16px;"><a href="https://kencamdk.github.io/Invitation.pdf">Klik her for at downloade invitationen 😎</a></p>
+    <object id="panzoom-element" data="https://kencamdk.github.io/Invitation.pdf" type="application/pdf" width="100%"
+        style="min-height:calc(100vh)">
+        <p style="margin: 16px;"><a href="https://kencamdk.github.io/Invitation.pdf">Klik her for at downloade
+                invitationen 😎</a></p>
     </object>
 
     <!-- <object data="file:///home/crc/src/other/binv/kencamdk.github.io/Invitation.pdf" type="application/pdf" width="100%" style="height:calc(100vh)">
         <p style="margin: 16px;"><a href="file:///home/crc/src/other/binv/kencamdk.github.io/Invitation.pdf">Klik her for at downloade invitationen 😎</a></p>
     </object> -->
+
+    <script>
+        const elem = document.getElementById('panzoom-element')
+        const panzoom = Panzoom(elem, {
+            maxScale: 5
+        })
+        // panzoom.pan(10, 10)
+        // panzoom.zoom(2, { animate: true })
+
+        // Panning and pinch zooming are bound automatically (unless disablePan is true).
+        // There are several available methods for zooming
+        // that can be bound on button clicks or mousewheel.
+        // button.addEventListener('click', panzoom.zoomIn)
+        // elem.parentElement.addEventListener('wheel', panzoom.zoomWithWheel)
+    </script>
 
 </body>
 
