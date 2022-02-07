@@ -44,7 +44,7 @@
         }
 
         var password = window.prompt("Enter password: ");
-        fetch("https://kencam.dk/test/test_encrypted")
+        fetch("https://kencam.dk/test2/test_encrypted")
             .then(d => d.text())
             .then(data => decryptAndShowImage(data, password));
 
