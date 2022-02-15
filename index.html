@@ -47,21 +47,25 @@
 <body>
 
     <img id="invitation">
+    <img id="invitation2">
 
     <script>
 
-        function decryptAndShowImage(data, password) {
+        function decryptAndShowImage(data, password, id) {
             var decrypted = CryptoJS.Rabbit.decrypt(data, password);
-            document.getElementById('invitation')
+            document.getElementById(id)
                 .setAttribute(
                     'src', decrypted.toString(CryptoJS.enc.Utf8)
                 );
         }
 
-        var password = window.prompt("Enter password: ");
-        fetch("https://raw.githubusercontent.com/kencamdk/kencamdk.github.io/main/Invitation")
+        var password = window.prompt("Indtast kodeord:");
+        fetch("https://raw.githubusercontent.com/kencamdk/kencamdk.github.io/main/Invitation1")
             .then(d => d.text())
-            .then(data => decryptAndShowImage(data, password));
+            .then(data => decryptAndShowImage(data, password, "invitation"));
+        fetch("https://raw.githubusercontent.com/kencamdk/kencamdk.github.io/main/Invitation2")
+            .then(d => d.text())
+            .then(data => decryptAndShowImage(data, password, "invitation2"));
 
     </script>
 
