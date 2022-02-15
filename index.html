@@ -38,11 +38,32 @@
         }
     </style>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"
+        integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 
 <body>
 
-    <img src="Invitation.png">
+    <img id="invitation">
+
+    <script>
+
+        function decryptAndShowImage(data, password) {
+            var decrypted = CryptoJS.Rabbit.decrypt(data, password);
+            document.getElementById('invitation')
+                .setAttribute(
+                    'src', decrypted.toString(CryptoJS.enc.Utf8)
+                );
+        }
+
+        var password = window.prompt("Enter password: ");
+        fetch("https://raw.githubusercontent.com/kencamdk/kencamdk.github.io/main/Invitation")
+            .then(d => d.text())
+            .then(data => decryptAndShowImage(data, password));
+
+    </script>
 
 </body>
 
